@@ -1,32 +1,32 @@
 import { useRef, useState } from "react";
 import { Image, StyleSheet, Text, View, Pressable } from "react-native";
-import { FokusButton } from "../components/FokusButton";
-import { ActionButton } from "../components/ActionButton";
-import { Timer } from "../components/Timer";
-import { IconPause, IconPlay } from "../components/Icons";
+import { FokusButton } from '../src/components/FokusButton';
+import { ActionButton } from "../src/components/ActionButton";
+import { Timer } from "../src/components/Timer";
+import { IconPause, IconPlay } from "../src/components/Icons";
 
 const pomodoro = [
   {
     id: 'focus',
     initialValue: 25 * 60,
-    image: require('./pomodoro.png'),
+    image: require('../src/assets/images/pomodoro.png'),
     display: 'Foco'
   },
   {
     id: 'short',
     initialValue: 5 * 60,
-    image: require('./short.png'),
+    image: require('../src/assets/images/short.png'),
     display: 'Pausa curta'
   },
   {
     id: 'long',
     initialValue: 15 * 60,
-    image: require('./long.png'),
+    image: require('../src/assets/images/long.png'),
     display: 'Pausa longa'
   },
 ]
 
-export default function Index() {
+export default function Pomodoro() {
 
   const [timerType, setTimerType] = useState(pomodoro[0])
   const [seconds, setSeconds] = useState(pomodoro[0].initialValue)
